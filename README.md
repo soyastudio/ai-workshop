@@ -1,1 +1,1 @@
-# ai-workshop
+# AI Workshop
