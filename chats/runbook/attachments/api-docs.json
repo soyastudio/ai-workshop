@@ -1,0 +1,1392 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "DOCT-c360-api",
+    "description": "The objective of the C360 Profile API is to support business use cases requiring low latency, realtime, responses ",
+    "contact": {
+      "name": "C360 Support Team",
+      "url": "https://albertsons.com",
+      "email": "Customerc360@albertsons.com"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "https://albertsons.com"
+    },
+    "version": "12/1/25, 9:28 PM PST"
+  },
+  "externalDocs": {
+    "url": "https://albertsons.com"
+  },
+  "servers": [
+    {
+      "url": "https://doct.qa1.westus.aks.az.albertsons.com/doct-c360-api",
+      "description": "Generated server url"
+    }
+  ],
+  "paths": {
+    "/v3/customer_info/{uuid}": {
+      "get": {
+        "tags": [
+          "C360 Customer Profile Information V3"
+        ],
+        "operationId": "get_customer_info_v3",
+        "parameters": [
+          {
+            "name": "uuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CustomerProfileResponse3"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v3/catalog/all": {
+      "get": {
+        "tags": [
+          "Catalog Metadata v3"
+        ],
+        "operationId": "get_catalog_metadata_v3",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/JsonNode"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/customer_info/{uuid}": {
+      "get": {
+        "tags": [
+          "C360 Customer Profile Information V2"
+        ],
+        "operationId": "get_customer_info_v2",
+        "parameters": [
+          {
+            "name": "uuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CustomerProfileResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/discovery/CDPSegments": {
+      "get": {
+        "tags": [
+          "C360 Discovery"
+        ],
+        "operationId": "get_cdp_segments",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/JsonNode"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/customer_transaction_aggregates/{uuid}": {
+      "get": {
+        "tags": [
+          "C360 Customer Profile Information V2"
+        ],
+        "operationId": "get_customer_transaction_aggregates",
+        "parameters": [
+          {
+            "name": "uuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "startDate",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransactionsResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/customer_info/{uuid}": {
+      "get": {
+        "tags": [
+          "C360 Customer Profile Information V2"
+        ],
+        "operationId": "get_customer_info",
+        "parameters": [
+          {
+            "name": "uuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/C360CustomerDataModel"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/catalog/all": {
+      "get": {
+        "tags": [
+          "Catalog Metadata"
+        ],
+        "operationId": "get_catalog_metadata",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/JsonNode"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/bnc/{uuid}": {
+      "get": {
+        "tags": [
+          "BNC Customer Transaction"
+        ],
+        "operationId": "get_bnc_customer_transaction",
+        "parameters": [
+          {
+            "name": "uuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/hal+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BncTransactionDataModel"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CustomerCelebrationsPredictions3": {
+        "type": "object",
+        "properties": {
+          "current_fiscal_week_id": {
+            "type": "number",
+            "format": "double"
+          },
+          "gen_celebration_pred": {
+            "type": "number",
+            "format": "double"
+          },
+          "birthday_pred": {
+            "type": "number",
+            "format": "double"
+          },
+          "anniversary_pred": {
+            "type": "number",
+            "format": "double"
+          }
+        }
+      },
+      "CustomerCommunicationPreference3": {
+        "type": "object",
+        "properties": {
+          "push_enabled_ind": {
+            "type": "boolean"
+          },
+          "email_opt_in_dt": {
+            "type": "string"
+          },
+          "sms_opt_in": {
+            "type": "string"
+          },
+          "sms_opt_in_dt": {
+            "type": "string"
+          },
+          "marketable_email_ind": {
+            "type": "string"
+          }
+        }
+      },
+      "CustomerDietPreference3": {
+        "type": "object",
+        "properties": {
+          "inferred_diet_cd": {
+            "type": "string"
+          },
+          "explicit_diet_preference_cd": {
+            "type": "string"
+          },
+          "account_explicit_diet_preferences": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "account_explicit_diet_restrictions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "account_explicit_diet_nutritions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "account_explicit_diet_dislikes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "CustomerEngagement3": {
+        "type": "object",
+        "properties": {
+          "eng_mode_p3m": {
+            "type": "string"
+          },
+          "eng_mode_p6m": {
+            "type": "string"
+          },
+          "eng_mode_p12m": {
+            "type": "string"
+          },
+          "eng_mode_lifetime": {
+            "type": "string"
+          },
+          "digital_login_p12m": {
+            "type": "string"
+          }
+        }
+      },
+      "CustomerProfile3": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string"
+          },
+          "hhid": {
+            "type": "string"
+          },
+          "guid": {
+            "type": "string"
+          },
+          "club_card_nbr": {
+            "type": "string"
+          },
+          "b4u_profile_ind": {
+            "type": "boolean"
+          },
+          "b4u_sign_up_dt": {
+            "type": "string"
+          },
+          "sincerely_health_ind": {
+            "type": "boolean"
+          }
+        }
+      },
+      "CustomerProfileResponse3": {
+        "type": "object",
+        "properties": {
+          "customer_profile": {
+            "$ref": "#/components/schemas/CustomerProfile3"
+          },
+          "customer_purchase_indicator": {
+            "$ref": "#/components/schemas/CustomerPurchaseIndicator3"
+          },
+          "customer_engagement": {
+            "$ref": "#/components/schemas/CustomerEngagement3"
+          },
+          "customer_store_region_preference": {
+            "$ref": "#/components/schemas/CustomerStoreRegionPreference3"
+          },
+          "customer_communication_preference": {
+            "$ref": "#/components/schemas/CustomerCommunicationPreference3"
+          },
+          "customer_subscription": {
+            "$ref": "#/components/schemas/CustomerSubscription3"
+          },
+          "customer_transaction_dates": {
+            "$ref": "#/components/schemas/CustomerTransactionDates3"
+          },
+          "customer_diet_preference": {
+            "$ref": "#/components/schemas/CustomerDietPreference3"
+          },
+          "customer_rewards": {
+            "$ref": "#/components/schemas/CustomerRewards3"
+          },
+          "customer_sheer_id_identification": {
+            "$ref": "#/components/schemas/CustomerSheerIdIdentification3"
+          },
+          "customer_symphony_segment": {
+            "$ref": "#/components/schemas/CustomerSymphonySegment3"
+          },
+          "customer_celebrations_predictions": {
+            "$ref": "#/components/schemas/CustomerCelebrationsPredictions3"
+          },
+          "data_science_model": {
+            "$ref": "#/components/schemas/DataScienceModel3"
+          }
+        }
+      },
+      "CustomerPurchaseIndicator3": {
+        "type": "object",
+        "properties": {
+          "pharmacy_purchase_ind_6m": {
+            "type": "boolean"
+          },
+          "gas_rewards_ind_6m": {
+            "type": "boolean"
+          },
+          "alcohol_purchase_ind_6m": {
+            "type": "boolean"
+          },
+          "pet_product_purchase_ind_6m": {
+            "type": "boolean"
+          },
+          "own_brand_ind_6m": {
+            "type": "boolean"
+          },
+          "deal_clipped_ind_6m": {
+            "type": "boolean"
+          },
+          "baby_product_purchase_ind_6m": {
+            "type": "boolean"
+          },
+          "starbucks_purchase_ind_6m": {
+            "type": "boolean"
+          },
+          "delicatessen_purchase_ind_6m": {
+            "type": "boolean"
+          },
+          "produce_purchase_ind_6m": {
+            "type": "boolean"
+          },
+          "food_service_purchase_ind_6m": {
+            "type": "boolean"
+          },
+          "frozen_grocery_purchase_ind_6m": {
+            "type": "boolean"
+          },
+          "bakery_packed_outside_purchase_ind_6m": {
+            "type": "boolean"
+          },
+          "dairy_purchase_ind_6m": {
+            "type": "boolean"
+          },
+          "bakery_purchase_ind_6m": {
+            "type": "boolean"
+          },
+          "coffee_kiosk_purchase_ind_6m": {
+            "type": "boolean"
+          },
+          "seafood_purchase_ind_6m": {
+            "type": "boolean"
+          },
+          "catering_purchase_ind_6m": {
+            "type": "boolean"
+          },
+          "gm_hbc_purchase_ind_6m": {
+            "type": "boolean"
+          },
+          "plated_meal_kits_purchase_ind_6m": {
+            "type": "boolean"
+          },
+          "meat_purchase_ind_6m": {
+            "type": "boolean"
+          },
+          "fuel_station_purchase_ind_6m": {
+            "type": "boolean"
+          },
+          "tobacco_purchase_ind_6m": {
+            "type": "boolean"
+          },
+          "bar_purchase_ind_6m": {
+            "type": "boolean"
+          },
+          "floral_purchase_ind_6m": {
+            "type": "boolean"
+          },
+          "ecom_purchase_ind_6m": {
+            "type": "boolean"
+          }
+        }
+      },
+      "CustomerRewards3": {
+        "type": "object",
+        "properties": {
+          "auto_cash_status_ind": {
+            "type": "boolean"
+          },
+          "current_point_balance": {
+            "type": "string"
+          },
+          "auto_cash_last_toggle_dt": {
+            "type": "string"
+          },
+          "auto_cash_cashoff_earned_since_optin": {
+            "type": "string"
+          },
+          "auto_cash_any_clip_ind": {
+            "type": "boolean"
+          },
+          "lifetime_savings_amt": {
+            "type": "string"
+          },
+          "points_expiring_next_month": {
+            "type": "string"
+          }
+        }
+      },
+      "CustomerSheerIdIdentification3": {
+        "type": "object",
+        "properties": {
+          "student_ind": {
+            "type": "boolean"
+          },
+          "snap_ind": {
+            "type": "boolean"
+          },
+          "snap_expire_ts": {
+            "type": "string"
+          },
+          "snap_txn_ind": {
+            "type": "boolean"
+          },
+          "military_type": {
+            "type": "string"
+          },
+          "firstresponder_ind": {
+            "type": "boolean"
+          },
+          "senior_ind": {
+            "type": "boolean"
+          },
+          "medical_ind": {
+            "type": "boolean"
+          }
+        }
+      },
+      "CustomerStoreRegionPreference3": {
+        "type": "object",
+        "properties": {
+          "customer_first_used_store_id": {
+            "type": "string"
+          },
+          "customer_last_used_store_id": {
+            "type": "string"
+          },
+          "customer_most_used_store_id": {
+            "type": "string"
+          },
+          "customer_highest_spent_store_id": {
+            "type": "string"
+          },
+          "prim_store_id": {
+            "type": "string"
+          },
+          "prim_b4u_region_id": {
+            "type": "string"
+          },
+          "prim_division_id": {
+            "type": "string"
+          },
+          "pref_store_id": {
+            "type": "string"
+          },
+          "pref_b4u_region_id": {
+            "type": "string"
+          },
+          "pref_division_id": {
+            "type": "string"
+          },
+          "reg_ts": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "reg_dt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "reg_store_id": {
+            "type": "string"
+          },
+          "reg_b4u_region_id": {
+            "type": "string"
+          },
+          "reg_division_id": {
+            "type": "string"
+          },
+          "reg_report_ind": {
+            "type": "boolean"
+          }
+        }
+      },
+      "CustomerSubscription3": {
+        "type": "object",
+        "properties": {
+          "freshpass_subscription_status_cd": {
+            "type": "string"
+          },
+          "freshpass_subscription_dt": {
+            "type": "string"
+          },
+          "schedule_and_save_ind_6m": {
+            "type": "boolean"
+          }
+        }
+      },
+      "CustomerSymphonySegment3": {
+        "type": "object",
+        "properties": {
+          "weekly_fact_segment_dsc": {
+            "type": "string"
+          },
+          "shopstyles_segment_dsc": {
+            "type": "string"
+          },
+          "true_price_segment_period_dsc": {
+            "type": "string"
+          },
+          "myneed_segment_dsc": {
+            "type": "string"
+          }
+        }
+      },
+      "CustomerTransactionDates3": {
+        "type": "object",
+        "properties": {
+          "last_web_visit_dt": {
+            "type": "string"
+          },
+          "last_mobile_visit_dt": {
+            "type": "string"
+          },
+          "last_store_visit_dt": {
+            "type": "string"
+          }
+        }
+      },
+      "DataScienceModel3": {
+        "type": "object",
+        "properties": {
+          "model_attribute": {
+            "type": "string"
+          },
+          "model_value_string": {
+            "type": "string"
+          },
+          "model_value_integer": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "model_value_float": {
+            "type": "number",
+            "format": "float"
+          },
+          "model_value_boolean": {
+            "type": "boolean"
+          },
+          "added_timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "JsonNode": {
+
+      },
+      "CustomerCelebrationsPredictions": {
+        "type": "object",
+        "properties": {
+          "current_fiscal_week_id": {
+            "type": "number",
+            "format": "double"
+          },
+          "gen_celebration_pred": {
+            "type": "number",
+            "format": "double"
+          },
+          "birthday_pred": {
+            "type": "number",
+            "format": "double"
+          },
+          "anniversary_pred": {
+            "type": "number",
+            "format": "double"
+          }
+        }
+      },
+      "CustomerCommunicationPreference": {
+        "type": "object",
+        "properties": {
+          "mail_preference": {
+            "type": "string"
+          },
+          "email_validated_ind": {
+            "type": "boolean"
+          },
+          "sms_validated_ind": {
+            "type": "boolean"
+          },
+          "validated_phone_type": {
+            "type": "string"
+          },
+          "email_verified_ind": {
+            "type": "boolean"
+          },
+          "sms_verified_ind": {
+            "type": "boolean"
+          },
+          "push_enabled_ind": {
+            "type": "boolean"
+          },
+          "email_opt_in_verified_ind": {
+            "type": "boolean"
+          },
+          "email_opt_in_dt": {
+            "type": "string"
+          },
+          "sms_opt_in": {
+            "type": "string"
+          },
+          "sms_opt_in_dt": {
+            "type": "string"
+          },
+          "marketable_email_ind": {
+            "type": "string"
+          },
+          "sms_launch_target_ind": {
+            "type": "boolean"
+          }
+        }
+      },
+      "CustomerDietPreference": {
+        "type": "object",
+        "properties": {
+          "inferred_diet_cd": {
+            "type": "string"
+          },
+          "explicit_diet_preference_cd": {
+            "type": "string"
+          },
+          "account_explicit_diet_preferences": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "account_explicit_diet_restrictions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "CustomerEngagement": {
+        "type": "object",
+        "properties": {
+          "last_transaction_channel_cd": {
+            "type": "string"
+          },
+          "eng_mode_p3m": {
+            "type": "string"
+          },
+          "eng_mode_p6m": {
+            "type": "string"
+          },
+          "eng_mode_p12m": {
+            "type": "string"
+          },
+          "eng_mode_lifetime": {
+            "type": "string"
+          },
+          "digital_login_p12m": {
+            "type": "string"
+          }
+        }
+      },
+      "CustomerProfile": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string"
+          },
+          "hhid": {
+            "type": "string"
+          },
+          "guid": {
+            "type": "string"
+          },
+          "club_card_nbr": {
+            "type": "string"
+          },
+          "b4u_profile_ind": {
+            "type": "boolean"
+          },
+          "b4u_sign_up_dt": {
+            "type": "string"
+          },
+          "sincerely_health_ind": {
+            "type": "boolean"
+          },
+          "birth_month": {
+            "type": "string"
+          }
+        }
+      },
+      "CustomerProfileResponse": {
+        "type": "object",
+        "properties": {
+          "customerProfile": {
+            "$ref": "#/components/schemas/CustomerProfile"
+          },
+          "customerPurchaseIndicator": {
+            "$ref": "#/components/schemas/CustomerPurchaseIndicator"
+          },
+          "customerEngagement": {
+            "$ref": "#/components/schemas/CustomerEngagement"
+          },
+          "customerStoreRegionPreference": {
+            "$ref": "#/components/schemas/CustomerStoreRegionPreference"
+          },
+          "customerCommunicationPreference": {
+            "$ref": "#/components/schemas/CustomerCommunicationPreference"
+          },
+          "customerSubscription": {
+            "$ref": "#/components/schemas/CustomerSubscription"
+          },
+          "customerTransactionDates": {
+            "$ref": "#/components/schemas/CustomerTransactionDates"
+          },
+          "customerDietPreference": {
+            "$ref": "#/components/schemas/CustomerDietPreference"
+          },
+          "customerRewards": {
+            "$ref": "#/components/schemas/CustomerRewards"
+          },
+          "customerSheerIdIdentification": {
+            "$ref": "#/components/schemas/CustomerSheerIdIdentification"
+          },
+          "customerSymphonySegment": {
+            "$ref": "#/components/schemas/CustomerSymphonySegment"
+          },
+          "customerCelebrationsPredictions": {
+            "$ref": "#/components/schemas/CustomerCelebrationsPredictions"
+          },
+          "dataScienceModel": {
+            "$ref": "#/components/schemas/DataScienceModel"
+          }
+        }
+      },
+      "CustomerPurchaseIndicator": {
+        "type": "object",
+        "properties": {
+          "in_store_txn_ind": {
+            "type": "boolean"
+          },
+          "web_transacted_ind": {
+            "type": "boolean"
+          },
+          "mobile_transacted_ind": {
+            "type": "boolean"
+          },
+          "dug_ind": {
+            "type": "boolean"
+          },
+          "delivery_ind": {
+            "type": "boolean"
+          },
+          "pharmacy_purchase_ind": {
+            "type": "boolean"
+          },
+          "gas_rewards_ind": {
+            "type": "boolean"
+          },
+          "alcohol_purchase_ind": {
+            "type": "boolean"
+          },
+          "pet_product_purchase_ind": {
+            "type": "boolean"
+          },
+          "own_brand_ind": {
+            "type": "boolean"
+          },
+          "deal_clipped_ind": {
+            "type": "boolean"
+          },
+          "baby_product_purchase_ind": {
+            "type": "boolean"
+          },
+          "starbucks_purchase_ind": {
+            "type": "boolean"
+          },
+          "delicatessen_purchase_ind": {
+            "type": "boolean"
+          },
+          "produce_purchase_ind": {
+            "type": "boolean"
+          },
+          "food_service_purchase_ind": {
+            "type": "string"
+          },
+          "frozen_grocery_purchase_ind": {
+            "type": "boolean"
+          },
+          "bakery_packed_outside_purchase_ind": {
+            "type": "boolean"
+          },
+          "dairy_purchase_ind": {
+            "type": "boolean"
+          },
+          "bakery_purchase_ind": {
+            "type": "boolean"
+          },
+          "coffee_kiosk_purchase_ind": {
+            "type": "boolean"
+          },
+          "seafood_purchase_ind": {
+            "type": "boolean"
+          },
+          "catering_purchase_ind": {
+            "type": "boolean"
+          },
+          "gm_hbc_purchase_ind": {
+            "type": "boolean"
+          },
+          "plated_meal_kits_purchase_ind": {
+            "type": "boolean"
+          },
+          "meat_purchase_ind": {
+            "type": "boolean"
+          },
+          "fuel_station_purchase_ind": {
+            "type": "boolean"
+          },
+          "tobacco_purchase_ind": {
+            "type": "boolean"
+          },
+          "bar_purchase_ind": {
+            "type": "boolean"
+          },
+          "floral_purchase_ind": {
+            "type": "boolean"
+          },
+          "ecom_purchase_ind": {
+            "type": "boolean"
+          }
+        }
+      },
+      "CustomerRewards": {
+        "type": "object",
+        "properties": {
+          "auto_cash_status_ind": {
+            "type": "boolean"
+          },
+          "current_point_balance": {
+            "type": "string"
+          },
+          "auto_cash_last_toggle_dt": {
+            "type": "string"
+          },
+          "auto_cash_cashoff_earned_since_optin": {
+            "type": "string"
+          },
+          "auto_cash_any_clip_ind": {
+            "type": "boolean"
+          },
+          "lifetime_savings_amt": {
+            "type": "string"
+          },
+          "points_expiring_next_month": {
+            "type": "string"
+          }
+        }
+      },
+      "CustomerSheerIdIdentification": {
+        "type": "object",
+        "properties": {
+          "student_ind": {
+            "type": "boolean"
+          },
+          "snap_ind": {
+            "type": "boolean"
+          },
+          "snap_expire_ts": {
+            "type": "string"
+          },
+          "snap_txn_ind": {
+            "type": "boolean"
+          },
+          "military_type": {
+            "type": "string"
+          },
+          "firstresponder_ind": {
+            "type": "boolean"
+          },
+          "senior_ind": {
+            "type": "boolean"
+          },
+          "medical_ind": {
+            "type": "boolean"
+          }
+        }
+      },
+      "CustomerStoreRegionPreference": {
+        "type": "object",
+        "properties": {
+          "customer_first_used_store_id": {
+            "type": "string"
+          },
+          "customer_most_used_store_id": {
+            "type": "string"
+          },
+          "customer_highest_spent_store_id": {
+            "type": "string"
+          },
+          "prim_store_id": {
+            "type": "string"
+          },
+          "prim_b4u_region_id": {
+            "type": "string"
+          },
+          "prim_division_id": {
+            "type": "string"
+          },
+          "pref_store_id": {
+            "type": "string"
+          },
+          "pref_b4u_region_id": {
+            "type": "string"
+          },
+          "pref_division_id": {
+            "type": "string"
+          },
+          "reg_ts": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "reg_dt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "reg_store_id": {
+            "type": "string"
+          },
+          "reg_b4u_region_id": {
+            "type": "string"
+          },
+          "reg_division_id": {
+            "type": "string"
+          },
+          "reg_report_ind": {
+            "type": "string"
+          }
+        }
+      },
+      "CustomerSubscription": {
+        "type": "object",
+        "properties": {
+          "freshpass_subscription_status_cd": {
+            "type": "string"
+          },
+          "freshpass_subscription_dt": {
+            "type": "string"
+          },
+          "schedule_and_save_ind": {
+            "type": "boolean"
+          }
+        }
+      },
+      "CustomerSymphonySegment": {
+        "type": "object",
+        "properties": {
+          "weekly_fact_segment_dsc": {
+            "type": "string"
+          },
+          "shopstyles_segment_dsc": {
+            "type": "string"
+          },
+          "true_price_segment_period_dsc": {
+            "type": "string"
+          },
+          "myneed_segment_dsc": {
+            "type": "string"
+          }
+        }
+      },
+      "CustomerTransactionDates": {
+        "type": "object",
+        "properties": {
+          "last_web_visit_dt": {
+            "type": "string"
+          },
+          "last_mobile_visit_dt": {
+            "type": "string"
+          },
+          "last_store_visit_dt": {
+            "type": "string"
+          }
+        }
+      },
+      "DataScienceModel": {
+        "type": "object",
+        "properties": {
+          "model_attribute": {
+            "type": "string"
+          },
+          "model_value_string": {
+            "type": "string"
+          },
+          "model_value_integer": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "model_value_float": {
+            "type": "number",
+            "format": "float"
+          },
+          "model_value_boolean": {
+            "type": "boolean"
+          },
+          "added_timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "DailyTransactionsResponse": {
+        "type": "object",
+        "properties": {
+          "transaction_date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "own_brand_total_txn_cnt": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "dug_txn_cnt": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "delivery_txn_cnt": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "alcohol_purchase_net_amount": {
+            "type": "number",
+            "format": "double"
+          },
+          "alcohol_purchase_transaction_cnt": {
+            "type": "number",
+            "format": "double"
+          }
+        }
+      },
+      "TransactionsResponse": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string"
+          },
+          "transactions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DailyTransactionsResponse"
+            }
+          }
+        }
+      },
+      "C360CustomerDataModel": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string"
+          },
+          "guid": {
+            "type": "string"
+          },
+          "freshPass": {
+            "$ref": "#/components/schemas/FreshPass"
+          },
+          "indicators": {
+            "$ref": "#/components/schemas/Indicators"
+          },
+          "household_id": {
+            "type": "string"
+          },
+          "club_card_nbr": {
+            "type": "string"
+          },
+          "meal_preferences": {
+            "$ref": "#/components/schemas/MealPreferences"
+          },
+          "eng_mode": {
+            "$ref": "#/components/schemas/EngagementMode"
+          }
+        }
+      },
+      "EngagementMode": {
+        "type": "object",
+        "properties": {
+          "eng_mode_p3m": {
+            "type": "string"
+          },
+          "eng_mode_p6m": {
+            "type": "string"
+          },
+          "eng_mode_p12m": {
+            "type": "string"
+          },
+          "eng_mode_lifetime": {
+            "type": "string"
+          }
+        }
+      },
+      "FreshPass": {
+        "type": "object",
+        "properties": {
+          "freshpass_subscription_status_cd": {
+            "type": "string"
+          }
+        }
+      },
+      "Indicators": {
+        "type": "object",
+        "properties": {
+          "alcohol_purchase_indicator": {
+            "type": "boolean"
+          },
+          "new_customer_indicator": {
+            "type": "string"
+          },
+          "ecomm_purchase_indicator": {
+            "type": "boolean"
+          },
+          "dug_txn_indicator": {
+            "type": "boolean"
+          },
+          "delivery_txn_indicator": {
+            "type": "boolean"
+          },
+          "own_brand_purchase_indicator": {
+            "type": "boolean"
+          },
+          "ecomm_last_purchase_date": {
+            "type": "string"
+          },
+          "rewards_expired": {
+            "type": "string"
+          },
+          "sincerely_health_ind": {
+            "type": "boolean"
+          }
+        }
+      },
+      "MealPreferences": {
+        "type": "object",
+        "properties": {
+          "inferred_diet_cd": {
+            "type": "string"
+          },
+          "classic_diet_preference_ind": {
+            "type": "boolean"
+          },
+          "keto_friendly_diet_preference_ind": {
+            "type": "boolean"
+          },
+          "flexitarian_diet_preference_ind": {
+            "type": "boolean"
+          },
+          "paleo_friendly_diet_preference_ind": {
+            "type": "boolean"
+          },
+          "vegetarian_diet_preference_ind": {
+            "type": "boolean"
+          },
+          "pescatarian_diet_preference_ind": {
+            "type": "boolean"
+          },
+          "vegan_diet_preference_ind": {
+            "type": "boolean"
+          },
+          "carb_conscious_diet_preference_ind": {
+            "type": "boolean"
+          },
+          "soy_free_restriction_ind": {
+            "type": "boolean"
+          },
+          "fish_free_restriction_ind": {
+            "type": "boolean"
+          },
+          "peanut_free_restriction_ind": {
+            "type": "boolean"
+          },
+          "tree_nut_free_restriction_ind": {
+            "type": "boolean"
+          },
+          "shellfish_free_restriction_ind": {
+            "type": "boolean"
+          },
+          "dairy_free_restriction_ind": {
+            "type": "boolean"
+          },
+          "sulfite_free_restriction_ind": {
+            "type": "boolean"
+          },
+          "mustard_free_restriction_ind": {
+            "type": "boolean"
+          },
+          "sesame_free_restriction_ind": {
+            "type": "boolean"
+          },
+          "egg_free_restriction_ind": {
+            "type": "boolean"
+          },
+          "nightshade_free_restriction_ind": {
+            "type": "boolean"
+          },
+          "gluten_free_restriction_ind": {
+            "type": "boolean"
+          },
+          "account_explicit_diet_preferences": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "account_explicit_diet_restrictions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "BncTransactionDataModel": {
+        "type": "object",
+        "properties": {
+          "customer_uuid": {
+            "type": "string"
+          },
+          "customer_type": {
+            "type": "string"
+          },
+          "last_Transaction_OrderDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "freshpass_status_cd": {
+            "type": "string"
+          },
+          "order_count": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
