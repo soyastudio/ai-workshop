@@ -1,0 +1,64 @@
+logging:
+  level:
+    ROOT: INFO
+    io.github.jhipster: INFO
+    com.albertsons.c360.api: INFO
+spring:
+  config:
+    activate:
+      on-profile: "prod"
+  data:
+    mongodb:
+      uri: ${mongodb-url}
+      database: doct
+      readPreference: Primary
+  redis:
+    cache:
+      host: ${c360-redis-host}
+      port: ${c360-redis-port}
+      password: ${c360-redis-access-key}
+      cache-null-values: false
+      time-to-live: 6000000
+      use-key-prefix: true
+      ssl: true
+      ttl: ${c360-redis-ttl}
+      redisSwitch: ${c360-redis-switch}
+      cluster:
+        nodes: ${c360-redis-nodes}
+        max-redirects: 3
+  devtools:
+    restart:
+      enabled: false
+    livereload:
+      enabled: false # we use Webpack dev server + BrowserSync for livereload
+  jackson:
+    serialization:
+      indent-output: true
+#  mail:
+#    host: localhost
+#    port: 25
+#    username:
+#    password:
+  messages:
+    cache-duration: PT1S # 1 second, see the ISO 8601 standard
+  sleuth:
+    sampler:
+      probability: 1 # report 100% of traces
+  application:
+    name: doct-c360-api
+server:
+  port: 8080
+accounting:
+  facility:
+    chunk:
+      size: 25
+
+# ===================================================================
+# Application specific properties
+# Add your own application properties here, see the ApplicationProperties class
+# to have type-safe configuration, like in the JHipsterProperties above
+#
+# More documentation is available at:
+# https://www.jhipster.tech/common-application-properties/
+
+# ===================================================================
