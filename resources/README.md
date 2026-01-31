@@ -45,6 +45,9 @@
 ### [马克的技术工作坊](https://www.youtube.com/@%E9%A9%AC%E5%85%8B%E7%9A%84%E6%8A%80%E6%9C%AF%E5%B7%A5%E4%BD%9C%E5%9D%8A)
 - [Agent Skill 从使用到原理，一次讲清](https://www.youtube.com/watch?v=yDc0_8emz7M)
 
+### [小黑黑讲AI](https://www.youtube.com/@xheiai)
+- [Transformer模型详解，Attention is all you need](https://www.youtube.com/watch?v=elmR9tWlen0)
+
 
 ### [01Coder](https://www.youtube.com/@01coder30)
 ## OpenCode
