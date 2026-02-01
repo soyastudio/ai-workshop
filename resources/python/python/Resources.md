@@ -11,3 +11,6 @@
 ## Youtube
 ### [Real Python](https://www.youtube.com/@realpython)
 - [Python Project Management With uv: Creating & Running Your Project With uv](https://www.youtube.com/watch?v=81nERix3NpE)
+
+### [Corey Schafer](https://www.youtube.com/user/schafer5)
+- [Python Tutorial: UV - A Faster, All-in-One Package Manager to Replace Pip and Venv](https://www.youtube.com/watch?v=AMdG7IjgSPM)

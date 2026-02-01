@@ -1,5 +1,3 @@
-# AI Workshop
+# AI Python Workshop
 
-## Resources
-
-## Transformers and BERT GPT
+[Resources](./resources/README.md)
