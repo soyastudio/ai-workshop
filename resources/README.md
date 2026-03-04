@@ -66,6 +66,8 @@
 - [LangChain for Java](https://github.com/langchain4j/langchain4j)
 - [ragflow4j](https://github.com/aaronshan/ragflow4j)
 - [arvindand](https://github.com/arvindand?tab=repositories)
+- [tzolov](https://github.com/tzolov
+- )
 
 
 ### Youtube
