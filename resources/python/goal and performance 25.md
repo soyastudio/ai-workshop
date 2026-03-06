@@ -1,4 +1,4 @@
-
+# Performance Document Year-End Performance Evaluation FY25
 
 ## Core Business - Accelerate Customer, Revenue Growth while Driving Modernization
 
@@ -17,6 +17,9 @@
 - Created MCP server projects for AI 
 
 ### Comments
+- Strong focus on multi-platform proficiency (Databricks + BigQuery) shows adaptability. The inclusion of both Python and Java for model development demonstrates technical breadth. The mention of MCP server projects indicates forward-thinking in AI infrastructure.
+- Excellent progress in aligning data engineering with AI goals. The shift from "loyalty hub" to "C360 hub" shows evolving business focus.
+- Consider defining specific metrics for "optimize application performance" (e.g., latency reduction, cost savings). Also, document lessons learned from MCP server implementation to share with the team.
 - Learn and understand C360 dataset and business logic of pipeline for C360.
 - Develop Python notebooks for exploratory data analysis (EDA) to validate business hypotheses.
 
@@ -37,10 +40,9 @@
 - co-work with different team to support company's productivity (Issue tracking, deployment, testing...).
 
 ### Comments
-- Be positive to everything.
-- Willing to share knowledge and suggestions around the company.
-- Promote pair programming sessions for complex Python/ML tasks.
-
+- The addition of cross-language knowledge sharing (Python and Java) is valuable for bridging gaps between different tech stacks. Active participation in company activities is evident.
+- Clearly an engaged team player who values collaboration. The emphasis on community participation helps build a stronger engineering culture.
+- Documenting for cross-team collaborations (e.g., specific examples of helping with deployments or issue tracking). This provides concrete evidence of your impact. 
 ---
 
 ## Personal Growth and People Management
@@ -55,9 +57,9 @@
 - Demonstrate proficiency by building end-to-end Python applications that serve ML models via APIs.
 
 ### Comments
-- Preparing for GCP Certification Test: GCP Data Engineer Certification, Cloud Architect Certification, Cloud Machine Learning Engineer.
-- Focus on Python coding standards and software engineering best practices for data science.
-
+- Clear commitment to continuous learning with a structured plan for certifications and skill mastery. The focus on both foundational (Pandas) and advanced (LLM fine-tuning) topics is well-balanced.
+- Dedicating to professional development is commendable. Moving from "study" to "demonstrate proficiency" shows a practical, outcome-oriented mindset.
+- Sharing your study notes or creating a quick reference guide for the team on topics like Spring Boot or BQ optimization.
 ---
 
 ## Process Optimization ; Associate Productivity
@@ -74,12 +76,10 @@
 - Standardize project templates for Python-based data science projects (Poetry/Cookiecutter).
 - Automate the generation of data quality reports and model drift detection.
 
-### Comments
-- Using markdown files as unified document in github for documentation, tracking task status, todo list, test case, logging, etc.
-- Using special plugins of markdown to convert markdown file to other docs such as html, pdf, word, ppt, json, yaml or even design diagram.
-- More text based AI features in future.
-- Automate deployment using tools such as copilot and other automation tools to improve code syntax and auto bigquery code-gen.
-- Utilize Python, Java and other languages for advanced automation of BigQuery data transformations and validation.
+### CComments
+- Excellent focus on automation and standardization. Implementing MLOps pipelines and data validation shows maturity in the development lifecycle.
+- Moving beyond ad-hoc development toward scalable, repeatable processes. The use of Great Expectations for data quality is a best practice.
+- Creating a shared "team playbook" documenting your CI/CD patterns and project templates. Also, explore integrating model drift detection alerts into team communication channels for real-time awareness.
 
 ---
 
@@ -94,7 +94,7 @@
 - Evaluate and integrate open-source Python and Java libraries to accelerate AI development (e.g., LangChain for LLM orchestration).
 - Build a model inference pipeline using AI tools, with pre-processing logic written in Python, Java and other language
 
-### Comments
+### Success Criteria
 - Leverage cloud-native architecture principles and patterns. Start working on migration tasks in Alation code conversion to Bigquery (over 200 scripts) and Loyalty migration from snowflake to Bigquery.
 - Already familiar with GCP development and maintenance when the GCP migration and auditing and test programs in new GCP platform.
 - Analyze, Optimize and Data Integration Workflow for GCP development and maintenance and validate data variance between Snowflake and BQ.
@@ -102,7 +102,12 @@
 - Utility tools for kafka, vsc plugins for BQ, data transformation etc.
 - Focus on developing reusable Python and Java utility libraries for the team to standardize data access and model scoring.
 
+### Comments
+- Impressive scope of work spanning migration, optimization, and innovation. The inclusion of SpringAI alongside Python frameworks shows versatility. The focus on reusable libraries is a force multiplier for team productivity.
+- Successfully transitioned from "learning" to "doing" and now to "innovating." The migration of 100+ scripts is a significant achievement.
+
 ---
 
 ## Summary
-The integration of Data Science, AI, and Python, Spring AI and other AI frameworks into our core objectives ensures that as we modernize our infrastructure on GCP, we are simultaneously building the capability to derive intelligence from our data. By moving from descriptive analytics to predictive and prescriptive models, we can unlock new business value from the loyalty hub, automate complex processes with Python, and foster a culture of innovation and continuous learning. This holistic approach ensures that our technical migration is directly tied to business growth and enhanced user experiences.
+
+I have truly enjoyed working with this company and being part of such collaborative and innovative teams throughout FY25. This year, I made significant contributions to the Core Business by driving C360 initiatives, optimizing API performance, and successfully working across both Databricks and BigQuery platforms. I took pride in developing Python-based ETL pipelines, building lab predictive models using Python and Java, and creating MCP server projects for AI—all while ensuring alignment with business goals and customer experience improvements. I actively participated in fostering a diverse and data-driven culture, sharing knowledge across teams, and collaborating on deployments and issue tracking to boost overall productivity. On the personal growth front, I deepened my expertise in Python for data science, advanced in MLOps and LLM fine-tuning, and pursued GCP certifications to stay at the forefront of technology. I am deeply grateful for the learning opportunities, the trust placed in me, and the chance to work on impactful, innovative projects—and I look forward to continuing this journey of growth and contribution with the company.
